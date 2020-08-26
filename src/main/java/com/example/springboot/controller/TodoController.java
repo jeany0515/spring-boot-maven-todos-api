@@ -41,6 +41,7 @@ public class TodoController {
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public Todo create(@RequestBody Todo todo) {
+        todo.setId(todoList.size());
         todoList.add(todo);
 
         return todo;
